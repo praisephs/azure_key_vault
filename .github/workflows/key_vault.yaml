@@ -25,7 +25,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Login to Azure
-        run: az login --service-principal -u $ARM_CLIENT_ID -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
+        #run: az login --service-principal -u $ARM_CLIENT_ID -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
+        run: az login --service-principal -u $ARM_CLIENT_ID -p 1RRiverniger. --tenant $ARM_TENANT_ID
         
         # uses: azure/login@v1
         # with:

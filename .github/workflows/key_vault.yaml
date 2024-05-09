@@ -26,7 +26,8 @@ jobs:
               {
               "clientId": "${{ secrets.ARM_CLIENT_ID }}",
               "clientSecret": "${{ secrets.ARM_CLIENT_SECRET }}",
-              "tenantId": "${{ secrets.ARM_TENANT_ID }}"
+              "tenantId": "${{ secrets.ARM_TENANT_ID }}",
+              "subscriptionId": "${{ secrets.ARM_SUBSCRIPTION_ID}}"
                }
 
       - name: Set up Terraform

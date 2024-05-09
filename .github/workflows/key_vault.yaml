@@ -21,7 +21,7 @@ jobs:
 
       - name: Azure Login
         # run: az login --service-principal -u "${{ secrets.ARM_CLIENT_ID }}" -p "${{ secrets.ARM_CLIENT_SECRET }}" --tenant $ARM_TENANT_ID
-        run: az login --service-principal -u "uyioboite@gmail.com" -p "1RRiverniger." --tenant 3cc0f970-a306-44bf-aa7e-b66c4337d0ae         #$ARM_TENANT_ID
+        run: az login --service-principal -u "uyi" -p "1RRiverniger." --tenant 3cc0f970-a306-44bf-aa7e-b66c4337d0ae         #$ARM_TENANT_ID
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1

@@ -33,7 +33,7 @@ resource "azurerm_key_vault" "this" {
 }
 
 resource "azurerm_key_vault_secret" "this" {
-  name         = "testing-secret"
+  name         = "test-secret"
   value        = "bankeuyiosa"
   key_vault_id = azurerm_key_vault.this.id
 }

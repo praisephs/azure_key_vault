@@ -8,20 +8,25 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
     
 
-    # env:
-    #   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
-    #   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
-    #   ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-    #   ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}  
+    env:
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}  
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Login to Azure
-        run: az login -u uyioboite@gmail.com -p 1RRiverniger.
+        run: az login --service-principal -u $ARM_CLIENT_ID -p $ARM_CLIENT_SECRET --tenant $ARM_TENANT_ID
+        
         # uses: azure/login@v1
         # with:
         #     creds: |

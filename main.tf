@@ -1,14 +1,29 @@
+terraform {
+  backend "azurerm" {
+    resource_group_name   = "key-vault-RG"
+    storage_account_name  = "backendstate"
+    container_name        = "key-vault"
+    key                   = "AWgZTuHW/JLv0MH85eqYS2T1cF6ZD3xnD2kj5Fifo9MTs7gP6rGulXi2uqZyrjhnGFNN1l15dJkN+AStcZWiVA=="
+  }
+}
+
+
 data "azurerm_client_config" "current" {}
 
-resource "azurerm_resource_group" "this" {
-  name     = "key-vault-RG"
-  location = "eastus2"
+data "azurerm_resource_group" "this" {
+  name = "key-vault-RG"
 }
+
+
+# resource "azurerm_resource_group" "this" {
+#   name     = "key-vault-RG"
+#   location = "eastus2"
+# }
 
 resource "azurerm_key_vault" "this" {
   name                        = "key-vault-uyi"
-  location                    = azurerm_resource_group.this.location
-  resource_group_name         = azurerm_resource_group.this.name
+  location                    = data.azurerm_resource_group.this.location
+  resource_group_name         = data.azurerm_resource_group.this.name
   enabled_for_disk_encryption = true
   tenant_id                   = data.azurerm_client_config.current.tenant_id
   soft_delete_retention_days  = 7

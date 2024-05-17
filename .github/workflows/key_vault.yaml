@@ -33,7 +33,7 @@ jobs:
       # - name: Initialize Terraform Backend
       #   run: |
       #     terraform init \
-      #     -backend-config="key=ARM_ACCESS_KEY"
+      #     -backend-config="key=ARM_ACCESS_KEY".
 
       - name: Terraform Init
         run: terraform init

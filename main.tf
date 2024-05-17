@@ -3,7 +3,7 @@ terraform {
     resource_group_name   = "key-vault-RG"
     storage_account_name  = "backendstate"
     container_name        = "key-vault"
-    access_key            = "ARM_ACCESS_KEY"
+    key                   = "terraform.tfstate"
     
   }
 }

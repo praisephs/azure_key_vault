@@ -30,6 +30,9 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
 
+      - name: Initialize Terraform Backend
+        run: /home/runner/work/_temp/d706af54-1cbe-48c3-a9d9-2012f3a22a05/terraform-bin init
+
       - name: Terraform Init
         run: terraform init
 
